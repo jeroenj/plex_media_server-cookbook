@@ -5,6 +5,7 @@ default[:plex_media_server][:apt][:key] = 'http://shell.ninthgate.se/packages/sh
 
 default[:plex_media_server][:preferences] = {
   'AcceptedEULA' => '1',
+  'CertificateVersion' => '2',
   'enableAirplayDolbyDigital' => '1',
   'FirstRun' => '0',
   'FriendlyName' => 'Plex',
