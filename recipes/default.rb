@@ -7,11 +7,13 @@ end
 
 package 'plexmediaserver'
 
-template '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Preferences.xml' do
+template '/var/lib/plexmediaserver/Library/Application Support/' + 
+         'Plex Media Server/Preferences.xml' do
   source 'Preferences.xml.erb'
   variables preferences: node[:plex_media_server][:preferences]
   user 'plex'
   group 'nogroup'
+  action :create_if_missing
   notifies :restart, 'service[plexmediaserver]'
 end
 
