@@ -11,7 +11,7 @@ template '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server
   source 'Preferences.xml.erb'
   variables preferences: node[:plex_media_server][:preferences]
   user 'plex'
-  group 'nogroup'
+  group 'plex'
   notifies :restart, 'service[plexmediaserver]'
 end
 
