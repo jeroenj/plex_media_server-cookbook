@@ -3,7 +3,7 @@ maintainer        'Jeroen Jacobs'
 maintainer_email  'chef@jeroenj.be'
 license           'MIT'
 description       'Installs Plex Media Server.'
-version           '1.0.2'
+version           '1.1.0'
 
 depends           'apt'
 
