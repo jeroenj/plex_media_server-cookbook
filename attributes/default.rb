@@ -1,7 +1,8 @@
-default[:plex_media_server][:apt][:uri] = 'http://shell.ninthgate.se/packages/debian'
-default[:plex_media_server][:apt][:distribution] = 'wheezy'
-default[:plex_media_server][:apt][:components] = %w(main)
-default[:plex_media_server][:apt][:key] = 'http://shell.ninthgate.se/packages/shell-ninthgate-se-keyring.key'
+default[:plex_media_server][:package][:version] = '0.9.16.6.1993-5089475'
+default[:plex_media_server][:package][:filename] = "plexmediaserver_#{node[:plex_media_server][:package][:version]}_amd64.deb"
+default[:plex_media_server][:package][:url] = "https://downloads.plex.tv/plex-media-server/#{node[:plex_media_server][:package][:version]}/#{node[:plex_media_server][:package][:filename]}"
+default[:plex_media_server][:package][:local_dir] = '/opt'
+default[:plex_media_server][:package][:local_path] = ::File.join(node[:plex_media_server][:package][:local_dir], node[:plex_media_server][:package][:filename])
 
 default[:plex_media_server][:preferences] = {
   'AcceptedEULA' => '1',

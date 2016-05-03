@@ -1,11 +1,10 @@
-apt_repository 'plexmediaserver' do
-  uri node[:plex_media_server][:apt][:uri]
-  distribution node[:plex_media_server][:apt][:distribution]
-  components node[:plex_media_server][:apt][:components]
-  key node[:plex_media_server][:apt][:key]
+remote_file node[:plex_media_server][:package][:local_path] do
+  source node[:plex_media_server][:package][:url]
 end
 
-package 'plexmediaserver'
+dpkg_package 'plexmediaserver' do
+  source node[:plex_media_server][:package][:local_path]
+end
 
 template '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Preferences.xml' do
   source 'Preferences.xml.erb'
